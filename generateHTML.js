@@ -170,5 +170,49 @@ function generateHTML(data) {
             zoom: .75; 
           } 
          }
-      </style>`
-        }
+      </style>
+      </head>
+<body class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="photo-header">
+        <img src="${data.avatar_url}">
+        <h1>Hi!</h1>
+        <h2>My name is ${data.name}</h1>
+          <h4 class="links-nav">Currently @ ${data.location}</h4>
+          <div class="row">
+          <p class="nav-link col"><a href="${data.html_url}">GitHub</a></p>
+          <p class="nav-link col"><a href="${data.blog}">Blog</a></p>
+          </div>
+      </div>
+    </div>
+  </div>
+    <div class="container main">
+      <div class="row">
+        <h2 class="links-nav">${data.bio}</h2>
+      </div>
+      <div class="row">
+        <div class="col card">
+          <h3>Public Repositories</h3>
+          <p>${data.public_repos}</p>
+        </div>
+        <div class="col card">
+          <h3>Followers</h3>
+          <p>${data.followers}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col card">
+          <h3>Github Stars</h3>
+          <p>${data.stars}</p>
+        </div>
+        <div class="col card">
+          <h3>Following</h3>
+          <p>${data.following}</p>
+        </div>
+      </div>
+    </div>
+</body>
+</html>`
+}
+module.exports = generateHTML;
